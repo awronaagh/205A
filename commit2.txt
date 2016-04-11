@@ -1,0 +1,51 @@
+#include "stdafx.h"
+
+#include <iostream>
+
+#include <string>
+
+#include <ctime> // time()
+
+#include <conio.h> // zawiera funkcja getch()
+
+#include <Windows.h> // zawiera funkcje Sleep()
+
+#include <fstream>
+
+
+using namespace std; // otwarcie przestrzeni nazw
+
+
+//#############################################################################################/
+
+// zmienne globalne
+
+int ry, rx; // ry - rozmiar na osi y (liczba wierszy), rx - rozmiar na osi x (liczba kolumn)
+
+int liczba_min; // zawiera informacje o liczbie min na planszy
+
+string imie; // imie gracza
+
+int liczba_flag;
+
+
+char **tab0; // tablica ukryta zawierajaca bomby itd
+
+char **tab1; // tablica ktora widzi gracz
+
+
+//#############################################################################################/
+
+// funkcje w programie
+
+void color(int i=0);
+
+void clear_screen();
+
+void menu_drugie(int parametr);
+
+void menu_glowne(int i=0);
+
+void run_game(int komunikat=0);
+
+void odslon_pola_wokol(int zi, int zx);
