@@ -1,0 +1,33 @@
+void PrzesunObiekt( RObiekt & obiekt, double idzDoX, double idzDoY, double fPredkosc = 1.0 )
+{
+    if( obiekt.x < idzDoX )
+    {
+        obiekt.x += fPredkosc; //idŸ w kierunku celu z podan¹ prêdkoœci¹
+        if( obiekt.x > idzDoX )
+             obiekt.x = idzDoX; //je¿eli przeszliœmy cel to wróæ do celu
+       
+    } else
+    if( obiekt.x > idzDoX )
+    {
+        obiekt.x -= fPredkosc; //idŸ w kierunku celu z podan¹ prêdkoœci¹
+        if( obiekt.x < idzDoX )
+             obiekt.x = idzDoX; //je¿eli przeszliœmy cel to wróæ do celu
+       
+    }
+   
+    //Analogicznie oœ Y:
+    if( obiekt.y < idzDoY )
+    {
+        obiekt.y += fPredkosc;
+        if( obiekt.y > idzDoY )
+             obiekt.y = idzDoY;
+       
+    } else
+    if( obiekt.y > idzDoY )
+    {
+        obiekt.y -= fPredkosc;
+        if( obiekt.y < idzDoY )
+             obiekt.y = idzDoY;
+       
+    }
+}

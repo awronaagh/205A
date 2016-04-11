@@ -1,0 +1,86 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+int main()
+{
+    time_t s, k;
+    srand( time( NULL ) );
+    int d, x;
+    int roznica = 0;
+    int wygrana = 0, przegrana = 0;
+    int mhp = 100;
+    while( wygrana < 3 )
+    {
+        d = 1 + rand() %( 9 );
+        cout << "Wcisnij " << d << " !" << endl;
+        cout << endl;
+        cout << "   |o|   " << endl;
+        time( & s );
+        cin >> x;
+        if( x == d )
+        {
+            time( & k );
+            roznica = difftime( k, s );
+            if( roznica <= 5 )
+            {
+                wygrana++;
+            }
+            if( roznica > 5 )
+            {
+                cout << "Za wolno!" << endl;
+                if( 3 - przegrana == 3 || 3 - przegrana == 2 ) cout << "Pozosta³y Tobie " << 3 - przegrana << " szanse!" << endl;
+               
+                if( 3 - przegrana == 1 ) cout << "Pozostala Tobie 1 szansa!" << endl;
+               
+                if( 3 - przegrana == 0 ) cout << "Nie masz szans!" << endl;
+               
+                przegrana++;
+            }
+        }
+        if( x != d && roznica > 5 )
+        {
+            cout << "Zle i za wolno!" << endl;
+            if( 3 - przegrana == 3 || 3 - przegrana == 2 ) cout << "Pozosta³y Tobie " << 3 - przegrana << " szanse!" << endl;
+           
+            if( 3 - przegrana == 1 ) cout << "Pozostala Tobie 1 szansa!" << endl;
+           
+            if( 3 - przegrana == 0 ) cout << "Nie masz szans!" << endl;
+           
+            przegrana++;
+        }
+        if( x != d )
+        {
+            cout << "Zle!" << endl;
+            if( 3 - przegrana == 3 || 3 - przegrana == 2 ) cout << "Pozosta³y Tobie " << 3 - przegrana << " szanse!" << endl;
+           
+            if( 3 - przegrana == 1 ) cout << "Pozostala Tobie 1 szansa!" << endl;
+           
+            if( 3 - przegrana == 0 ) cout << "Nie masz szans!" << endl;
+           
+            przegrana++;
+        }
+        if( przegrana > 3 )
+        {
+            cout << endl;
+            cout << "*dam dam dam dam damdam dam damdam*" << endl;
+            cout << endl;
+            cout << "        <o>" << endl;
+            cout << "         ^" << endl;
+            cout << "     <<< ^ >>>" << endl;
+            cout << "  <<<         >>>" << endl;
+            cout << "<< (1)  (2)  (3) >>" << endl;
+            cout << "  <<<         >>>" << endl;
+            cout << "     <<<< >>>>" << endl;
+            cout << "         v" << endl;
+            cout << endl;
+            cout << "        ***" << endl;
+            cout << "       *>o<*" << endl;
+            cout << "        ***" << endl;
+            cout << endl;
+            cout << "Imperium wygralo" << endl;
+            return 0;
+        }
+    }
+    return 0;
+}
